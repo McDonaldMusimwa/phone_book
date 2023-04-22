@@ -1,26 +1,24 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require('path')
+
+
+const mongodb = require('./db/connection');
 
 const app = express();
 
-//routes import
-const adminRoutes = require('./routes/admin')
-const shopRoutes = require('./routes/shop')
 
-//passing the body from client
-app.use(bodyParser.urlencoded({ extended: false }));
-//add css
-app.use(express.static(path.join(__dirname,'public')));
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    next();
+  })
+
+  .use("/", require("./routes"));
+
+mongodb.mongoConnect((client) => {
+  console.log('The database is available',client);
+  app.listen(3001);
+});
 
 
-//use imported routes
-app.use("/admin",adminRoutes);
-app.use(shopRoutes)
-
-//handle 404
-app.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,'views','404.html'));
-
-})
-app.listen(3000);

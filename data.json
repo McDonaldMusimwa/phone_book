@@ -1,0 +1,23 @@
+[
+  {
+    "firstName": "Nokubonga",
+    "lastName": "Musimwa",
+    "email": "nokubongamusimwa@gmail.com",
+    "birthDay": "14 June 1993",
+    "favorateColor": "Black"
+  },
+  {
+    "firstName": "Issac",
+    "lastName": "Babbeyo",
+    "email": "isaac@gmail.com",
+    "birthDay": "14 May 1990",
+    "favorateColor": "Blue"
+  },
+  {
+    "firstName": "Munashe",
+    "lastName": "Musimwa",
+    "email": "munashemusimwa@gmail.com",
+    "birthDay": "6 October 2019",
+    "favorateColor": "Red"
+  }
+]
