@@ -18,7 +18,7 @@ app
 
 mongodb.mongoConnect((client) => {
   console.log('The database is available',client);
-  app.listen(3001);
+  app.listen(3000);
 });
 
 
