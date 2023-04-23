@@ -1,6 +1,9 @@
 {
   "name": "practice3",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "description": "practice project 3",
   "main": "app.js",
   "scripts": {
