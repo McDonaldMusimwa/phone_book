@@ -11,7 +11,7 @@ const getAllContacts = async (req, res) => {
     .find();
   contacts.toArray().then((list) => {
     res.setHeader("Content-Type", "Application/json");
-    res.status("200").json(list);
+    res.status(200).json(list);
   });
 };
 
