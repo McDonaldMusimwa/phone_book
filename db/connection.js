@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
+// eslint-disable-next-line no-undef
 const url = process.env.URL;
 
 let _db;

@@ -42,7 +42,7 @@ const addOneContact = async (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    birthDay: req.body.birthday,
+    birthDay: req.body.birthDay,
     favorateColor: req.body.favorateColor,
   };
 
@@ -85,22 +85,17 @@ const modifyOneContact = async (req, res) => {
 //Delete One contact
 const deleteOneContact = async (req, res) => {
   const contactId = new ObjectId(req.params.id);
-  const contact = await mongodb
-    .getDb()
-    .db("phonebook")
-    .collection("contacts")
-    .findOne({ _id: contactId });
-  contact.toArray().json();
   const response = await mongodb
     .getDb()
     .db("phonebook")
     .collection("contacts")
+    .deleteOne({ _id: contactId },true);
+  
 
-    .deleteOne({ _id: contactId });
   if (response.acknowledged) {
     res.status(200).json(response);
   } else {
-    res.status(400).send(`${contact.firstName} failed to add to the phonebook`);
+    res.status(400).json(response.error || 'Error occurred while deleting the contact.');
   }
 };
 
