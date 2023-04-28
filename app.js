@@ -4,9 +4,13 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger_output.json');
 //const swaggerJsDoc = require('swagger-jsdoc');
 const mongodb = require('./db/connection');
+const cors = require('cors')
 const PORT = 3000;
 const app = express();
-
+//set cors origin
+app.use(cors({
+  origin:"https://cse341-contacts-frontend.netlify.app/"
+}))
 // Serve Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app
