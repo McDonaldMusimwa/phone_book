@@ -44,6 +44,9 @@ const addOneContact = async (req, res) => {
     email: req.body.email,
     birthDay: req.body.birthDay,
     favorateColor: req.body.favorateColor,
+    location: req.body.location,
+    phoneNumber: req.body.phoneNumber,
+    companyName: req.body.companyName
   };
 
   const response = await mongodb
@@ -68,6 +71,9 @@ const modifyOneContact = async (req, res) => {
     email: req.body.email,
     birthDay: req.body.birthDay,
     favorateColor: req.body.favorateColor,
+    location: req.body.location,
+    phoneNumber: req.body.phoneNumber,
+    companyName: req.body.companyName
   };
 
   const response = await mongodb
