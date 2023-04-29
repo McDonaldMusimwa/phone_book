@@ -2,11 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
+const cors = require("cors");
 //const swaggerJsDoc = require('swagger-jsdoc');
 const mongodb = require('./db/connection');
 const PORT = 3000;
 const app = express();
 
+//resource sharing with cors
+app.use(cors())
 // Serve Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app
