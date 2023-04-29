@@ -1,4 +1,4 @@
-POST http://localhost:3000/addcontact
+PUT  http://localhost:3000/modify
 content-type: application/json
 
 

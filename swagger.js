@@ -1,32 +1,33 @@
 const swaggerAutogen = require('swagger-autogen')();
 
-const outputFile = './swagger_output.json';
-const endpointsFiles = ['./routes/contacts'];
-
-
 const doc = {
   info: {
-    version: '1.0.0',
-    title: 'Phonebook node js api',
-    description: 'This is the documentaion for a phonebook api.',
-    termsOfService: 'null',
-    contact: {
-      name: 'McDonald Musimwa',
-      email: 'mcdonald.musimwa74@gmail.com',
-      url: 'https://mcdonaldphone-book.onrender.com'
-    },
-    license: {
-      name: 'Apache 2.0',
-      url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
-    }
+    version: '',      // by default: '1.0.0'
+    title: 'Phonebook Api',        // by default: 'REST API'
+    description: 'Phonebook api allows you to add new contacts and view saved contacts',  // by default: ''
   },
-  host: 'mcdonaldphone-book.onrender.com/api-docs',
-  basePath: '/',
-  schemes: ['https'],
-  consumes: ['application/json'],
-  produces: ['application/json']
+  host: 'mcdonaldphone-book.onrender.com',      // by default: 'localhost:3000'
+  basePath: '',  // by default: '/'
+  schemes: ['https'],   // by default: ['http']
+  consumes: [],  // by default: ['application/json']
+  produces: [],  // by default: ['application/json']
+  tags: [        // by default: empty Array
+    {
+      name: '',         // Tag name
+      description: '',  // Tag description
+    },
+    // { ... }
+  ],
+  securityDefinitions: {},  // by default: empty object
+  definitions: {},          // by default: empty object (Swagger 2.0)
+  components: {}            // by default: empty object (OpenAPI 3.x)
 };
 
-swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-  require('./app.js');
-});
+const outputFile = 'swagger-output.json';
+const endpointsFiles = ['./routes/contacts.js'];
+
+/* NOTE: if you use the express Router, you must pass in the 
+   'endpointsFiles' only the root file where the route starts,
+   such as: index.js, app.js, routes.js, ... */
+
+swaggerAutogen(outputFile, endpointsFiles, doc);

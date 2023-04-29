@@ -2,30 +2,21 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Phonebook node js api",
-    "description": "This is the documentaion for a phonebook api.",
-    "termsOfService": "null",
-    "contact": {
-      "name": "McDonald Musimwa",
-      "email": "mcdonald.musimwa74@gmail.com",
-      "url": "https://mcdonaldphone-book.onrender.com"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
-    }
+    "title": "Phonebook Api",
+    "description": "Phonebook api allows you to add new contacts and view saved contacts"
   },
-  "host": "https://mcdonaldphone-book.onrender.com/api-docs",
-  "basePath": "/",
+  "host": "mcdonaldphone-book.onrender.com",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "",
+      "description": ""
+    }
+  ],
   "schemes": [
-    "http"
+    "https"
   ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
+  "securityDefinitions": {},
   "paths": {
     "/contacts": {
       "get": {
