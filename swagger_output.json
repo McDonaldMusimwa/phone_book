@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Phonebook node js api",
-    "description": "This is the documentaion for phonebook api",
+    "description": "This is the documentaion for a phonebook api.",
     "termsOfService": "null",
     "contact": {
       "name": "McDonald Musimwa",
@@ -15,7 +15,7 @@
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "localhost:3000",
+  "host": "https://mcdonaldphone-book.onrender.com/api-docs",
   "basePath": "/",
   "schemes": [
     "http"

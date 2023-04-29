@@ -20,9 +20,9 @@ const doc = {
       url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
     }
   },
-  host: 'https://mcdonaldphone-book.onrender.com/api-docs',
+  host: 'mcdonaldphone-book.onrender.com/api-docs',
   basePath: '/',
-  schemes: ['http'],
+  schemes: ['https'],
   consumes: ['application/json'],
   produces: ['application/json']
 };
